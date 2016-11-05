@@ -1,0 +1,33 @@
+html,body{
+	margin: 0;
+	padding: 0;
+}
+
+.vcenter{
+	width: 20px;
+	height: 20px;
+	display: block;
+	margin: 0px auto;
+}
+
+.inline{
+	display: inline-block;
+	list-style: none;
+	margin-left: 10px;
+}
+.block{
+	display: block;
+	margin-left: -40px;
+}
+.marg{
+	margin-top: 10px;
+}
+.marg1{
+	margin-top: 1px;
+}
+
+.add-on{
+	width: 30px;
+	height: 30px;
+	background-position: 5px 5px;
+}
