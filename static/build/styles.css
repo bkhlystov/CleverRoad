@@ -8371,6 +8371,10 @@ body {
   padding: 0;
 }
 
+b {
+  font-size: 16px;
+}
+
 .vcenter {
   width: 20px;
   height: 20px;
@@ -8391,12 +8395,6 @@ body {
 
 .marg {
   margin-top: 10px;
-}
-
-.add-on {
-  width: 30px;
-  height: 30px;
-  background-position: 5px 5px;
 }
 
 

@@ -1,4 +1,15 @@
-
+module.exports = {
+    entry: "./entry.js",
+    output: {
+        path: __dirname,
+        filename: "bundle.js"
+    },
+    module: {
+        loaders: [
+            { test: /\.css$/, loader: "style!css" }
+        ]
+    }
+};
 
 var webpack = require('webpack');
 var path = require('path');
@@ -41,7 +52,10 @@ webpackConfig = {
 			{        
 				test: /\.scss$/,        
 				loader: ExtractTextPlugin.extract('style-loader', 'css-loader!resolve-url!sass-loader?sourceMap')      
-				},      // {      //   test: /\.css$/,      //   loader: ExtractTextPlugin.extract('style-loader', 'css-loader')      // }, 
+				},      
+			// {      
+			// 	test: /\.css$/,      //   loader: ExtractTextPlugin.extract('style-loader', 'css-loader')      
+			// }, 
      		{        
      			test: /\.woff2?$|\.ttf$|\.eot$|\.svg$|\.png|\.jpe?g|\.gif$/,        
      			loader: 'file-loader'      

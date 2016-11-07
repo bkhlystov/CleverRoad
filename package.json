@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kazminaolya/app.git"
+    "url": "git+https://github.com/bkhlystov/CleverRoad.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/kazminaolya/app/issues"
+    "url": ""
   },
-  "homepage": "https://github.com/kazminaolya/app#readme",
+  "homepage": "",
   "dependencies": {
     "angular": "^1.5.8",
     "angular-ui-sortable": "^0.15.0",

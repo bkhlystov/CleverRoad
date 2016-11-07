@@ -4,99 +4,93 @@
     <meta charset="UTF-8">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-<!--     // <script type="text/javascript" src="modules/directives/sortable/src/sortable.js"></script> -->
     <link rel="stylesheet" href="styles.css">
-<!--     // <script type="text/javascript" src="https://cdn.jsdelivr.net/ngstorage/0.3.6/ngStorage.min.js"></script> -->
   </head>
-  <body ng-controller="mainCtrl">
-
-  <div id="rootwizard" class="tabbable tabs-right">
-  <ul class="nav col-xs-2 col-sm-2 col-md-2">
-    <li class="active"><a href="#tab1" data-toggle="tab">Home</a></li>
-    <li><a href="#tab2" data-toggle="tab">Profile</a></li>
-    <li><a href="#tab3" data-toggle="tab">Logout</a></li>
-  </ul>
-  <div class="tab-content">
-    <div class="tab-pane active col-xs-3 col-sm-3 col-md-3" id="tab1">
-
-        <h1>Dashboard</h1>
-        <li class="active inline"><a href="#tab1" data-toggle="tab">Home</a></li>
-        <li class="inline">/</li>
-        <li class="active inline"><a href="#tab1" data-toggle="tab">User1</a></li>
-        <li class="inline">/</li>
-        <li class="inline"><a href="#tab2" data-toggle="tab">Profile</a></li>
-        <li class="inline">/</li>
-        <li class="inline"><a href="#tab2" data-toggle="tab">Edit</a></li>
-   <form role="form" class="form-inline">
-        <div class="input-group marg">
-          <span class="input-group-addon glyphicon glyphicon-user"></span>
-          <input type="text" class="form-control marg1" id="add" placeholder="Введите Ваше ФИО" ng-model="text">
-        </div>
-        <div class="input-group marg">
-          <span class="input-group-addon glyphicon glyphicon-user"></span>
-          <input type="date" class="form-control marg1"placeholder="Введите дату" ng-model="date" style="width: 196px;">
-        </div>
-        <div class="input-group marg">
-          <span class="input-group-addon glyphicon glyphicon-user"></span>
-          <input type="text" class="form-control marg1"placeholder="Введите город" ng-model="city">
-        </div>
-       <button type="submit" class="btn btn-success marg" ng-click="addItem(text, date, city); reset()">Добавить</button>
-      </form>
-    </div>
-    <div class="tab-pane col-xs-10 col-sm-10 col-md-10" id="tab2">
-      <h1>Dashboard</h1>
-        <li class="active inline"><a href="#tab1" data-toggle="tab">Home</a></li>
-        <li class="inline">/</li>
-        <li class="active inline"><a href="#tab1" data-toggle="tab">UserList</a></li>
-      <table class="table">
-          <thead>
-            <tr>
-              <th>№</th>
-              <th>Username</th>
-              <th>Birthday</th>
-              <th>City</th>
-              <th>Active</th>
-              <th>Boss</th>
-              <th>Dell Bought</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr ng-repeat="item in dataList" ng-class="selected==$index ? 'success' : '' " ng-click="select($index)" ng-drag="true" ui-sortable="{ 'ui-floating': true }">
-              <td>{{$index}}</td>
-              <td>{{item.name}}</td>
-              <td>{{item.birthday | date :'dd.MM.yyyy'}}</td>
-              <td>{{item.city}}</td>
-              <td><input type="checkbox" value="" class="vcenter"></td>
-              <td><input type="radio" name="optradio" class="vcenter"></td>
-              <td><button type="button" class="btn btn-danger" ng-click="removeItem(item)">Delete</button></td>
-            </tr>      
-          </tbody>
-      </table>
-    </div>
-    <div class="tab-pane col-xs-4 col-sm-4 col-md-4" id="tab3" ng-repeat="item in dataList">
-      <h1>Dashboard</h1>
-        <ul class="block">
-          <li class="active inline"><a href="#tab1" data-toggle="tab">Home</a></li>
-          <li class="inline">/</li>
-          <li class="inline"><a href="#tab2" data-toggle="tab">User1</a></li>
-          <li class="inline">/</li>
-          <li class="inline"><a href="#tab2" data-toggle="tab">Profile</a></li>
+    <body ng-controller="mainCtrl">
+        <div id="rootwizard" class="tabbable tabs-right">
+        <ul class="nav col-xs-2 col-sm-2 col-md-2">
+          <li class="active"><a href="#tab1" data-toggle="tab">Home</a></li>
+          <li><a href="#tab2" data-toggle="tab">Profile</a></li>
+          <li><a href="#tab3" data-toggle="tab">Logout</a></li>
         </ul>
-        <div class="col-xs-4 col-sm-4 col-md-4">
-          <p>Name:   <b>{{item.name}}</b></p>
-          <p>Birthday:   <b>{{item.birthday | date :'dd.MM.yyyy'}}</b></p>
-          <p>City:   <b>{{item.city}}</b></p>
-        </div>
-        </div>
-    </div>
-    </div>
-</div>
-<script type="text/javascript" src="static/build/bundle.js"></script>
+        <div class="tab-content">
+          <div class="tab-pane active col-xs-3 col-sm-3 col-md-3" id="tab1">
+              <h1>Dashboard</h1>
+              <li class="active inline"><a href="#tab1" data-toggle="tab">Home</a></li>
+              <li class="inline">/</li>
+              <li class="active inline"><a href="#tab1" data-toggle="tab">User1</a></li>
+              <li class="inline">/</li>
+              <li class="inline"><a href="#tab2" data-toggle="tab">Profile</a></li>
+              <li class="inline">/</li>
+              <li class="inline"><a href="#tab2" data-toggle="tab">Edit</a></li>
+            <form role="form" class="form-inline">
+              <div class="input-group marg">
+                <span class="input-group-addon glyphicon glyphicon-user"></span>
+                <input type="text" class="form-control marg1" id="add" placeholder="Введите Ваше ФИО" ng-model="text">
+              </div>
+              <div class="input-group marg">
+                <span class="input-group-addon glyphicon glyphicon-user"></span>
+                <input type="date" class="form-control marg1"placeholder="Введите дату" ng-model="date" style="width: 196px;">
+              </div>
+              <div class="input-group marg">
+                <span class="input-group-addon glyphicon glyphicon-user"></span>
+                <input type="text" class="form-control marg1"placeholder="Введите город" ng-model="city">
+              </div>
+             <button type="submit" class="btn btn-success marg" ng-click="addItem(text, date, city); reset()">Добавить</button>
+            </form>
+          </div>
+          <div class="tab-pane col-xs-10 col-sm-10 col-md-10" id="tab2">
+            <h1>Dashboard</h1>
+              <li class="active inline"><a href="#tab1" data-toggle="tab">Home</a></li>
+              <li class="inline">/</li>
+              <li class="active inline"><a href="#tab1" data-toggle="tab">UserList</a></li>
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th>№</th>
+                    <th>Username</th>
+                    <th>Birthday</th>
+                    <th>City</th>
+                    <th>Active</th>
+                    <th>Boss</th>
+                    <th>Dell Bought</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr ng-repeat="item in dataList" ng-class="selected==$index ? 'success' : '' " ng-click="select($index)" ng-drag="true" ui-sortable="{ 'ui-floating': true }">
+                    <td>{{$index}}</td>
+                    <td>{{item.name}}</td>
+                    <td>{{item.birthday | date :'dd.MM.yyyy'}}</td>
+                    <td>{{item.city}}</td>
+                    <td><input type="checkbox" value="" class="vcenter"></td>
+                    <td><input type="radio" name="optradio" class="vcenter"></td>
+                    <td><button type="button" class="btn btn-danger" ng-click="removeItem(item)">Delete</button></td>
+                  </tr>      
+                </tbody>
+            </table>
+          </div>
+          <div class="tab-pane col-xs-4 col-sm-4 col-md-4" id="tab3" ng-repeat="item in dataList">
+            <h1>Dashboard</h1>
+              <ul class="block">
+                <li class="active inline"><a href="#tab1" data-toggle="tab">Home</a></li>
+                <li class="inline">/</li>
+                <li class="inline"><a href="#tab2" data-toggle="tab">User1</a></li>
+                <li class="inline">/</li>
+                <li class="inline"><a href="#tab2" data-toggle="tab">Profile</a></li>
+              </ul>
+              <div class="col-xs-4 col-sm-4 col-md-4">
+                <p>Name:   <b>{{item.name}}</b></p>
+                <p>Birthday:   <b>{{item.birthday | date :'dd.MM.yyyy'}}</b></p>
+                <p>City:   <b>{{item.city}}</b></p>
+              </div>
+              </div>
+          </div>
+          </div>
+      </div>
+    <script type="text/javascript" src="static/build/bundle.js"></script>
   </body>
 </html>

@@ -76,9 +76,6 @@ var bundle =
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	// import sortable from 'angular-ui-sortable';
-
-
 	var app = _angular2.default.module("app", ["ngStorage", 'ngDraggable']);
 		exports.app = app;
 
@@ -42975,7 +42972,7 @@ var bundle =
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	// import {sortable} from 'angular-ui-sortable';
+	//import sortable from 'angular-ui-sortable';
 
 
 	_app.app.controller("mainCtrl", ["$rootScope", "$scope", "$log", "$localStorage", "$sessionStorage", "$window", 'ngDraggable', function ($rootScope, $scope, $log, $localStorage, $sessionStorage, $window) {
@@ -43011,18 +43008,7 @@ var bundle =
 			$log.warn($scope.dataList.indexOf(item));
 			$scope.dataList.splice($scope.dataList.indexOf(item), 1);
 		};
-		//передвижение строк таблицы
-		// $scope.sortableOptions = {
-		//   // called after a node is dropped
-		//   stop: function(e, ui) {
-		//     var logEntry = {
-		//       ID: $scope.dataList.length + 1,
-		//       // Text: 'Moved element: ' + ui.item.scope().item.text
-		//     };
-		//     $scope.dataList.push(logEntry);
-		//   }
-		// };
-	}]);
+		}]);
 
 /***/ }
 /******/ ]);
