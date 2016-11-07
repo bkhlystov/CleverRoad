@@ -42972,9 +42972,6 @@ var bundle =
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	//import sortable from 'angular-ui-sortable';
-
-
 	_app.app.controller("mainCtrl", ["$rootScope", "$scope", "$log", "$localStorage", "$sessionStorage", "$window", 'ngDraggable', function ($rootScope, $scope, $log, $localStorage, $sessionStorage, $window) {
 		!!$localStorage.Data[0] ? '' : $localStorage.Data = [];
 		//сохранение в локал сторидж
@@ -43008,7 +43005,7 @@ var bundle =
 			$log.warn($scope.dataList.indexOf(item));
 			$scope.dataList.splice($scope.dataList.indexOf(item), 1);
 		};
-		}]);
+	}]);
 
 /***/ }
 /******/ ]);

@@ -3,8 +3,6 @@ import $ from 'jquery';
 import {app} from '../app.js';
 import {storage} from '../../../bower_components/ngstorage/ngStorage';
 import {Draggable} from '../../../bower_components/ngDraggable/ngDraggable';
-//import sortable from 'angular-ui-sortable';
-
 
 app.controller("mainCtrl", ["$rootScope", "$scope", "$log","$localStorage", 
 	"$sessionStorage", "$window", 'ngDraggable',
@@ -42,5 +40,4 @@ function($rootScope, $scope, $log, $localStorage, $sessionStorage, $window){
 		$log.warn($scope.dataList.indexOf(item));
 		$scope.dataList.splice($scope.dataList.indexOf(item),1);
 	}	
-
 }]);
